@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    min-height: 30vh
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content {
+    display: flex;
+    height: 70vh;
+}
+
+
+.menu {
+    width: 200px;
+    height: 500px;
+    margin-right: 100px;
+    background-color: rgb(218, 131, 18);
+    border: 5px solid rgb(131, 84, 23);
+    border-radius: 10px;
+}
+
+#gridContainer {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid rgb(131, 84, 23);
+    border-radius: 10px;
+}
+
+.gridSquare {
+    flex: 0 0 calc(100% / 16);
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px solid rgb(0, 0, 0);
+}
