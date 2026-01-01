@@ -20,6 +20,10 @@ h1 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+h2 {
+    font-size: 35px;
+}
+
 .content {
     display: flex;
     height: 70vh;
@@ -33,6 +37,9 @@ h1 {
     background-color: rgb(218, 131, 18);
     border: 5px solid rgb(131, 84, 23);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #gridContainer {
