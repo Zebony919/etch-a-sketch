@@ -17,9 +17,26 @@
             <div class="menu">
                 <h2>Menu</h2>
 
-                <div>
-                    <label>Pick a color: </label>
-                    <input type="color" id="colorPicker" value="#ff0000">
+                <div class="buttonContainer">
+                    <div>
+                        <label>Pick a color: </label>
+                        <input type="color" class="button" id="colorPicker" value="rgb(0, 0, 0)">
+                    </div>
+
+                    <div>
+                        <label>Grid Size: </label>
+                        <input type="number" id="gridSize" min="16" max="100" value="16">
+                    </div>
+
+                    <div>
+                        <label>Reset Grid: </label>
+                        <button class="button" id="resetButton"></button>
+                    </div>
+
+                    <div>
+                        <label>Rainbow Mode: </label>
+                        <button class="button" id="randomColorButton"></button>
+                    </div>
                 </div>
             </div>
 

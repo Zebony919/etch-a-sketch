@@ -42,6 +42,32 @@ h2 {
     align-items: center;
 }
 
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-left: 20px;
+    gap: 20px;
+}
+
+#colorPicker {
+    border: none;
+    outline: none;
+}
+
+#resetButton,
+#randomColorButton {
+    height: 20px;
+    width: 40px;
+    background-color: white;
+    border: 4px solid rgb(226, 226, 226);
+    border-radius: 10%;
+}
+
+#randomColorButton {
+    background-color: red;
+}
+
 #gridContainer {
     width: 500px;
     height: 500px;
@@ -56,5 +82,4 @@ h2 {
     aspect-ratio: 1;
     box-sizing: border-box;
     background-color: white;
-    border: 2px solid rgb(0, 0, 0);
 }
