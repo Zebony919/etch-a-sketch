@@ -4,6 +4,7 @@ const buttons = buttonContainer.querySelectorAll(".button");
 const colorPicker = document.querySelector("#colorPicker");
 const resetButton = document.querySelector("#resetButton");
 const randomColorButton = document.querySelector("#randomColorButton");
+const darkenButton = document.querySelector("#darkenMode");
 const gridSizeInput = buttonContainer.querySelector("#gridSize");
 let squares = gridContainer.querySelectorAll(".gridSquare");
 
@@ -16,6 +17,7 @@ function createGrid(size) {
         const gridSquare = document.createElement("div");
         gridSquare.classList.add("gridSquare");
         gridSquare.style.flex = `0 0 calc(100% / ${size})`;
+        gridSquare.dataset.darkness = "0";
 
         gridSquare.addEventListener("mouseenter", function() {
             if (rainbowMode) {
@@ -24,8 +26,20 @@ function createGrid(size) {
                 const g = Math.floor(Math.random() * 256);
 
                 this.style.backgroundColor = `rgb(${r}, ${b}, ${g})`;
+            } else if (darkenMode) {
+                let currentDarkness = parseInt(this.dataset.darkness);
+
+                if (currentDarkness < 10) {
+                    currentDarkness++;
+                    this.dataset.darkness = currentDarkness;
+
+                    const opacity = currentDarkness / 10;
+                    this.style.backgroundColor = colorPicker.value;
+                    this.style.opacity = opacity;
+                }
             } else {
                 this.style.backgroundColor = colorPicker.value;
+                this.style.opacity = "1";
             }
         });
 
@@ -68,6 +82,8 @@ buttons.forEach(button => {
 resetButton.addEventListener("click", function() {
     squares.forEach(square => {
         square.style.backgroundColor = "white";
+        square.style.opacity = "1";
+        square.dataset.darkness = "0";
     });
 })
 
@@ -78,6 +94,19 @@ randomColorButton.addEventListener("click", function() {
     rainbowMode = !rainbowMode;
 
     if (rainbowMode) {
+        this.style.backgroundColor = "lightgreen";
+    } else {
+        this.style.backgroundColor = "red";
+    }
+})
+
+// Darken mode button
+let darkenMode = false;
+
+darkenButton.addEventListener("click", function() {
+    darkenMode = !darkenMode;
+
+    if (darkenMode) {
         this.style.backgroundColor = "lightgreen";
     } else {
         this.style.backgroundColor = "red";
